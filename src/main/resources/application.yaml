@@ -1,0 +1,45 @@
+spring:
+   application:
+      name: keycloak-spring-boot
+   profiles:
+      active: dev
+   jpa:
+      database: POSTGRESQL
+      show-sql: true
+      hibernate:
+         ddl-auto: validate
+---
+#DEV PROFILE
+spring:
+   main:
+      allow-circular-references: true
+   config:
+      activate:
+         on-profile: dev
+   datasource: 
+       url: jdbc:postgresql://localhost:5432/yourdrivinglicense
+       username: ENC(SAt0wrsbcwdo7PuxxUDuBOSyxyKghxsK8Cv7VzFTLYfGh99wkIA6I2hszrJG9iJj)
+       password: ENC(5qja9n+Lt00FgItMlJY27DPfRl7Z9+6ymlayvTGVlYIbdklrLxLVx2pzXPfqji7s)
+       driverClassName: org.postgresql.Driver
+keycloak:
+   realm: ENC(ZxEGWVpvjHGaGzrNj4+XxLQIJo6ibcZcIVa0AI02ZGBUEuioG3Y10XEZ8+dTH3ic2EBzDEzRc+1SqbsGqUhSEg==)
+   auth-server-url: ENC(5/61T4y9yBQZlbc244oXeIEhGKju86kZGIsXH+maIkL4OXIZhQaJU+I8+L6evG7CmoopAZdUjOQlZarlY1qJ7w==)
+   ssl-required: external
+   resource: ENC(Ek3orV6jbCcHnLi0CLXSIXVoTSIMQRTBj5pPaw5Rw7mcM/4qqmIxJbuQ6QmmYhKwSW4+qhMaab2pl8lNxEqlbQ==)
+   credentials:
+      secret: ENC(gNeriOzHfmHkgFO550qoQlU/KXqun7pH2/ScvuAuHtAByz315MOJ2ryobszjHEYgGPdUURhhu593gWE8QMEXEw3jStMu9yknLVGzluU4yPQ=)
+   public-client: true
+   use-resource-role-mappings: true
+   bearer-only: true
+---
+#PROD PROFILE
+spring:
+   config:
+      activate:
+         on-profile: prod
+
+            
+        
+
+
+ 
